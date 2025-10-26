@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPLATA LISTIĆA - LOTO 6/45</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UPLATA LISTIĆA</h1>
+            <div id="user-info">
+                <div id="login-section">
+                    <a href="/auth/login" class="btn btn-primary">PRIJAVI SE</a>
+                </div>
+                <div id="user-section" style="display: none;">
+                    <span id="user-name"></span>
+                    <a href="/auth/logout" class="btn btn-secondary">ODJAVI SE</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="auth-required" style="display: none;">
+                <h2>POTREBNA PRIJAVA</h2>
+                <p>Morate se prijaviti da biste mogli uplatiti listić.</p>
+                <a href="/auth/login" class="btn btn-primary">PRIJAVI SE</a>
+            </div>
+
+            <div id="ticket-form-section">
+                <h2>PODACI O LISTIĆU</h2>
+                <form id="ticket-form">
+                    <div class="form-group">
+                        <label for="id-number">BROJ OSOBNE ISKAZNICE ILI PUTOVNICE:</label>
+                        <input type="text" id="id-number" name="idNumber" maxlength="20" required>
+                        <small>Maksimalno 20 znakova</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numbers">BROJEVI (6-10 BROJEVA, OD 1 DO 45):</label>
+                        <input type="text" id="numbers" name="numbers" placeholder="npr. 1, 5, 12, 23, 34, 45" required>
+                        <small>Unesite 6-10 brojeva odvojena zarezom (1-45)</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">UPLATI LISTIĆ</button>
+                </form>
+
+                <div id="error-message" class="error" style="display: none;"></div>
+                <div id="success-message" class="success" style="display: none;">
+                    <h3>LISTIĆ JE USPJEŠNO UPLAĆEN!</h3>
+                    <p>Vaš QR kod:</p>
+                    <div id="qr-code-container"></div>
+                    <a href="/" class="btn btn-secondary">POVRATAK NA POČETNU</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/submit-ticket.js"></script>
+</body>
+</html>

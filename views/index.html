@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOTO 6/45</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LOTO 6/45</h1>
+            <div id="user-info">
+                <div id="login-section">
+                    <a href="/auth/login" class="btn btn-primary">PRIJAVI SE</a>
+                </div>
+                <div id="user-section" style="display: none;">
+                    <span id="user-name"></span>
+                    <a href="/auth/logout" class="btn btn-secondary">ODJAVI SE</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="round-info">
+                <h2>TRENUTNO KOLO</h2>
+                <div id="round-status">
+                    <p>Učitavanje...</p>
+                </div>
+            </div>
+
+            <div id="ticket-section" style="display: none;">
+                <h2>UPLATA LISTIĆA</h2>
+                <p>Kolo je aktivno! Možete uplatiti listić.</p>
+                <a href="/submit-ticket" class="btn btn-primary">UPLATI LISTIĆ</a>
+            </div>
+
+            <div id="results-section" style="display: none;">
+                <h2>REZULTATI</h2>
+                <div id="drawn-numbers"></div>
+            </div>
+
+            <div id="admin-section">
+                <h2>UPRAVLJANJE KOLIMA</h2>
+                <div class="admin-buttons">
+                    <button id="new-round-btn" class="btn btn-primary">AKTIVIRAJ KOLO</button>
+                    <button id="close-round-btn" class="btn btn-secondary">ZATVORI KOLO</button>
+                    <button id="show-results-form-btn" class="btn btn-primary">SPREMI REZULTATE</button>
+                </div>
+                
+                <div id="admin-message" style="display: none; margin-top: 20px; padding: 10px; border: 3px solid #000; background: #fff; font-weight: bold;"></div>
+            </div>
+                
+                <div id="results-form" class="results-form" style="display: none;">
+                    <h3>UNOS IZVUČENIH BROJEVA</h3>
+                    <form id="store-results-form">
+                        <div class="form-group">
+                            <label for="drawn-numbers">IZVUČENI BROJEVI:</label>
+                            <input type="text" id="drawn-numbers" name="numbers" placeholder="npr. 1, 5, 12, 23, 34, 45" required>
+                            <small>Unesite brojeve odvojene zarezom</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">SPREMI REZULTATE</button>
+                        <button type="button" id="cancel-results-btn" class="btn btn-secondary">ODUSTANI</button>
+                    </form>
+                </div>
+                
+                <div id="admin-message" class="admin-message" style="display: none;"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
